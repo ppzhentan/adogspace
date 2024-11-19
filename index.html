@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adog.space - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(135deg, #0a192f 0%, #000000 100%);
+            color: #fff;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+
+        .content {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            z-index: 2;
+        }
+
+        .logo {
+            font-size: 5rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .logo .highlight {
+            color: #4a9eff;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo .dog-ear {
+            position: absolute;
+            top: -20px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            background: #4a9eff;
+            transform: rotate(45deg);
+            border-radius: 0 0 0 10px;
+        }
+
+        .coming-soon {
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 2rem;
+            background: linear-gradient(90deg, #4a9eff, #83ff4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .rocket {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+            font-size: 3rem;
+            animation: launch 10s infinite;
+        }
+
+        @keyframes launch {
+            0% { 
+                bottom: -100px;
+                opacity: 0;
+            }
+            20% { opacity: 1; }
+            100% { 
+                bottom: 120vh;
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo { font-size: 3rem; }
+            .coming-soon { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="content">
+        <div class="logo">
+            <span class="highlight">a<div class="dog-ear"></div></span>dog.space
+        </div>
+        <div class="coming-soon">Launching Soon</div>
+    </div>
+    <div class="rocket">🚀</div>
+
+    <script>
+        // Create stars
+        const starsContainer = document.querySelector('.stars');
+        const numberOfStars = 200;
+
+        for (let i = 0; i < numberOfStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            // Random size between 1 and 3 pixels
+            const size = Math.random() * 2 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            // Random position
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            
+            // Random twinkle delay
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            
+            starsContainer.appendChild(star);
+        }
+
+        // Create multiple rockets
+        setInterval(() => {
+            const rocket = document.createElement('div');
+            rocket.className = 'rocket';
+            rocket.textContent = '🚀';
+            document.body.appendChild(rocket);
+            
+            // Remove rocket after animation
+            setTimeout(() => rocket.remove(), 10000);
+        }, 5000);
+    </script>
+</body>
+</html>
