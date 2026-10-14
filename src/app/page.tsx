@@ -1,6 +1,29 @@
 import Image from "next/image";
 import { capabilities, projects, site } from "@/data/site";
 
+function BrandBadge({ brand }: { brand: "chatgpt" | "notion" | "x" }) {
+  const labels = { chatgpt: "ChatGPT", notion: "Notion", x: "X / Twitter" };
+  return (
+    <span className={`brand-badge brand-badge-${brand}`} aria-label={labels[brand]}>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        {brand === "notion" ? <>
+          <rect x="2.5" y="2.5" width="19" height="19" rx="3" />
+          <path d="M8 17V7l8 10V7" />
+        </> : brand === "x" ? <path d="M5 4h4.4l9.6 16h-4.4L5 4Zm0 16L18.8 4h-2.7L5 17.1V20Z" /> : <>
+          <path d="M12 3.2c2.2 0 4.1 1.2 5.2 3.1l-2.1 1.2a3.6 3.6 0 0 0-6.2 0L6.8 6.3A6 6 0 0 1 12 3.2Z" />
+          <path d="M18.1 6.4a6 6 0 0 1 2.7 4.7l-2.4.1a3.6 3.6 0 0 0-3.6-3.5V5.3c1.2 0 2.3.4 3.3 1.1Z" />
+          <path d="M20.8 11.1a6 6 0 0 1-2.1 5l-1.5-1.8a3.6 3.6 0 0 0-.5-5.1l1.5-1.8a6 6 0 0 1 2.6 3.7Z" />
+          <path d="M18.7 16.1a6 6 0 0 1-5.1 2.8v-2.4a3.6 3.6 0 0 0 3.1-1.8l2 1.4Z" />
+          <path d="M13.6 18.9a6 6 0 0 1-5.3-3l2.1-1.2a3.6 3.6 0 0 0 3.2 1.8v2.4Z" />
+          <path d="M8.3 15.9a6 6 0 0 1-2.7-4.8l2.4-.1a3.6 3.6 0 0 0 3.6 3.5v2.4c-1.2 0-2.3-.4-3.3-1Z" />
+          <path d="M5.6 11.1a6 6 0 0 1 2.1-5l1.5 1.8a3.6 3.6 0 0 0 .5 5.1l-1.5 1.8a6 6 0 0 1-2.6-3.7Z" />
+        </>}
+      </svg>
+      <span>{labels[brand]}</span>
+    </span>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -31,9 +54,17 @@ export default function Home() {
             {projects.map((project) => (
               <article className={`project${project.number === "01" ? " project-featured" : ""}`} key={project.number}>
                 {project.image && <>
-                  <p className="project-feature-label">Featured Project <span>{project.number} / 04</span></p>
+                  <p className="project-feature-label">{project.imageLabel ?? (project.number === "01" ? "Featured Project" : "Concept artwork")} <span>{project.number} / 04</span></p>
                   <div className="project-image project-image-real">
                     <Image src={project.image} alt={project.imageAlt ?? `${project.title} 产品截图`} fill sizes="(max-width: 600px) calc(100vw - 40px), 720px" unoptimized />
+                    {project.number === "01" && <>
+                      <BrandBadge brand="chatgpt" />
+                      <BrandBadge brand="notion" />
+                    </>}
+                    {project.number === "03" && <>
+                      <BrandBadge brand="x" />
+                      <BrandBadge brand="notion" />
+                    </>}
                   </div>
                 </>}
                 <div className="project-heading">

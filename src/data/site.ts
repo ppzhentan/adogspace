@@ -17,6 +17,7 @@ export type Project = {
   highlight?: string;
   image?: string;
   imageAlt?: string;
+  imageLabel?: string;
 };
 
 export const projects: Project[] = [
@@ -29,8 +30,9 @@ export const projects: Project[] = [
     link: "https://chatgpt-to-notion.linkcanvas.space/",
     linkLabel: "Explore Project",
     highlight: "10K Installs Milestone",
-    image: "https://chatgpt-to-notion.linkcanvas.space/assets/ai-chat-backup-chatgpt-to-notion.png",
-    imageAlt: "AI Chat Backup 将 ChatGPT 对话导出到 Notion 的真实产品截图",
+    image: "/images/ai-chat-backup-concept.png",
+    imageAlt: "AI Chat Backup 功能概念插画：将多个 AI 平台的对话归档到 Markdown、Notion 或 Obsidian；并非产品截图",
+    imageLabel: "Featured Project · Concept art, not a product screenshot",
   },
   {
     number: "02",
@@ -40,6 +42,9 @@ export const projects: Project[] = [
     tags: ["Chrome Extension", "Productivity", "Browser Tools"],
     link: "https://chromewebstore.google.com/detail/bookmarkcat-sidebar-bookm/afglhbhdpnicmeklejjhgmfoagllfkgj",
     linkLabel: "Chrome Web Store",
+    image: "/images/bookmarkcat-concept.png",
+    imageAlt: "BookmarkCat 功能概念插画：侧栏书签、标签、备注、搜索和个人云备份；并非产品截图",
+    imageLabel: "Concept artwork · Not a product screenshot",
   },
   {
     number: "03",
@@ -49,6 +54,9 @@ export const projects: Project[] = [
     tags: ["Browser Extension", "Content Archiving"],
     link: "https://chromewebstore.google.com/detail/xtwitter-tweet-backup-mar/ghodkmngolbpaomhklnlgjilmcpikabm",
     linkLabel: "Chrome Web Store",
+    image: "/images/x-twitter-backup-concept.png",
+    imageAlt: "X/Twitter Backup 功能概念插画：将单条推文、来源链接和媒体整理到 Markdown 或 Notion；并非产品截图",
+    imageLabel: "Concept artwork · Not a product screenshot",
   },
   {
     number: "04",

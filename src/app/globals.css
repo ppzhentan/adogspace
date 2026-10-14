@@ -89,8 +89,15 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
 .project-list { gap: 35px; }
 .project-feature-label { display: flex; justify-content: space-between; margin: 0 0 9px; color: #686d70; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
 .project-feature-label span { color: var(--muted); font-weight: 400; }
-.project-image-real { aspect-ratio: 1.9; background: #f5f5f3; }
+.project-image-real { aspect-ratio: 16 / 9; background: #f5f5f3; }
 .project-image-real img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.brand-badge { position: absolute; z-index: 1; top: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 9px; border: 1px solid rgba(224, 225, 222, .9); border-radius: 999px; color: #424649; background: rgba(255, 255, 255, .94); box-shadow: 0 1px 3px rgba(25, 28, 30, .06); font-size: 10px; font-weight: 600; line-height: 1; }
+.brand-badge-chatgpt, .brand-badge-x { left: 12px; }
+.brand-badge-notion { right: 12px; }
+.brand-badge svg { width: 15px; height: 15px; overflow: visible; fill: #242729; }
+.brand-badge-notion svg rect { fill: #242729; stroke: #242729; stroke-width: 1; }
+.brand-badge-notion svg path { fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.brand-badge-chatgpt svg { fill: #353a39; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0 0; padding: 0; list-style: none; }
 .project-tags li { padding: 3px 8px; border: 1px solid #e4e4e1; border-radius: 99px; color: #666b6f; font-size: 11px; line-height: 1.5; }
 .project-link, .project-link-missing { display: inline-block; margin-top: 10px; color: var(--ink); font-size: 12px; }
@@ -126,6 +133,10 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
   .section-heading p { margin-top: 3px; }
   .project-list { gap: 36px; }
   .project-image { aspect-ratio: 1.25; border-radius: 9px; }
+  .brand-badge { top: 8px; gap: 4px; padding: 4px 7px; font-size: 9px; }
+  .brand-badge-chatgpt, .brand-badge-x { left: 8px; }
+  .brand-badge-notion { right: 8px; }
+  .brand-badge svg { width: 13px; height: 13px; }
   .image-placeholder { font-size: 13px; }
   .project-heading { margin-top: 13px; }
   .project-heading h3 { font-size: 19px; }
@@ -143,7 +154,6 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
   .intro-copy { font-size: 14px; line-height: 1.75; }
   .work { padding-top: 8px; }
   .project-list { gap: 29px; }
-  .project-image-real { aspect-ratio: 1.35; }
   .project-heading { align-items: flex-start; flex-direction: column; gap: 3px; }
   .footer-profile { margin-top: 40px; padding: 20px; border-radius: 14px; }
   .footer-profile-mark { flex-basis: 48px; width: 48px; height: 48px; }
