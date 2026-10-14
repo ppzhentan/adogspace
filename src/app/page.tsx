@@ -1,4 +1,4 @@
-import { projects, site } from "@/data/site";
+import { capabilities, projects, site } from "@/data/site";
 
 export default function Home() {
   return (
@@ -14,65 +14,80 @@ export default function Home() {
 
       <main id="main" className="page-shell">
         <section className="intro" id="top" aria-labelledby="intro-title">
-          <p className="eyebrow">你好，欢迎来到 adog.space</p>
-          <h1 id="intro-title">这是 adog.space，我的个人主页。</h1>
-          <p className="intro-copy">{site.description}</p>
-          <p className="intro-copy">{site.about}</p>
+          <p className="eyebrow">独立开发者 · adog.space</p>
+          <h1 id="intro-title">I build things for the internet.</h1>
+          <p className="intro-copy">写代码，做产品，解决真实的问题。</p>
+          <p className="intro-copy">你好，我是一名独立开发者。过去约 8 年，我一直在与代码、互联网和产品打交道。从 PHP 和 Laravel 开发，到独立构建 Chrome 扩展，再到探索 AI 与真实商业场景的结合。</p>
+          <p className="intro-copy">我喜欢把一个想法变成真正可以使用的东西。</p>
+          <a className="text-link" href="#work">Explore my work <span aria-hidden="true">→</span></a>
         </section>
 
         <section className="work" id="work" aria-labelledby="work-title">
           <div className="section-heading">
-            <h2 id="work-title">一些作品</h2>
-            <p>目前能从仓库确认的项目记录。</p>
+            <h2 id="work-title">Selected Work</h2>
+            <p>一些我真正动手做过的东西。</p>
           </div>
           <div className="project-list">
-            {projects.map((project, index) => (
-              <article className="project" key={`${project.title}-${index}`}>
-                <div className="project-image" role="img" aria-label={`${project.title}的项目图片待补充`}>
-                  <span className="image-index">0{index + 1} / {String(projects.length).padStart(2, "0")}</span>
-                  <span className="image-placeholder">此项目的真实图片待补充</span>
-                  <span className="image-hint">请添加你希望展示的项目图片</span>
+            {projects.map((project) => (
+              <article className="project" key={project.number}>
+                <div className="project-image" role="img" aria-label={`${project.title} 项目图片待补充`}>
+                  <span className="image-index">{project.number} / 04</span>
+                  <span className="image-placeholder">{project.title}</span>
+                  <span className="image-hint">项目图片待补充</span>
                 </div>
                 <div className="project-heading">
                   <h3>{project.title}</h3>
-                  <span>{project.year}</span>
+                  {project.highlight && <span>{project.highlight}</span>}
                 </div>
-                <p className="project-meta">{project.type}</p>
+                <p className="project-meta">{project.tagline}</p>
                 <p className="project-description">{project.description}</p>
-                <p className="project-missing">{project.detailsMissing}</p>
+                <p className="project-meta">{project.tags.join(" · ")}</p>
+                {project.link && <a className="project-link" href={project.link} target="_blank" rel="noreferrer">{project.linkLabel} ↗</a>}
               </article>
             ))}
           </div>
-          <p className="placeholder-note">这条记录来自仓库中的旧版页面，不代表已确认你的个人职责或项目成果。</p>
         </section>
 
         <section className="about" id="about" aria-labelledby="about-title">
-          <h2 id="about-title">关于我</h2>
+          <h2 id="about-title">About Me</h2>
           <div className="about-card">
             <div className="about-card-heading">
               <span className="about-monogram" aria-hidden="true">a</span>
-              <div><h3>{site.name}</h3><p>{site.role}</p></div>
+              <div><h3>Developer by experience. Builder by nature.</h3><p>{site.role}</p></div>
             </div>
-            <p>{site.about}</p>
-            <dl>
-              {site.location && <div><dt>所在</dt><dd>{site.location}</dd></div>}
-              <div><dt>联系</dt><dd>{site.email}</dd></div>
-            </dl>
+            <p>我的职业经历始于 Web 开发。长期使用 PHP、Laravel、MySQL 和 JavaScript 构建网站、后端服务与业务系统，也熟悉服务器部署、API 集成和浏览器扩展开发。</p>
+            <p>后来，我逐渐发现，比起只完成别人提出的需求，我更喜欢自己发现问题、设计解决方案，并把产品真正发布出去。AI Chat Backup 是这条路上一个重要的作品。</p>
+            <p>开发一个产品并不只是写代码。还需要面对真实用户的反馈、不同平台的兼容性、不断变化的接口，以及上线之后持续出现的新问题。</p>
+            <p><strong>好的产品不一定复杂，但应该解决一个真实存在的问题。</strong></p>
+            <p>现在，我仍然在写代码、做产品，也在探索 AI 能如何改变个人创造软件的方式。</p>
+          </div>
+        </section>
+
+        <section className="about" aria-labelledby="capabilities-title">
+          <h2 id="capabilities-title">What I Do</h2>
+          <div className="about-card">
+            {capabilities.map((item) => <p key={item.title}><strong>{item.title}</strong><br />{item.description}</p>)}
+          </div>
+        </section>
+
+        <section className="about" aria-labelledby="notes-title">
+          <h2 id="notes-title">Notes & Thoughts</h2>
+          <div className="about-card">
+            <p>关于创造、技术和互联网的一些记录。</p>
+            <p>我会在这里分享做产品过程中的发现、遇到的问题，以及那些还没有确定答案的想法。</p>
+            <p>Not everything needs to become a product. Some things are worth exploring just because they&apos;re interesting.</p>
           </div>
         </section>
 
         <footer className="contact" id="contact">
-          <p className="eyebrow">想一起做点什么？</p>
-          <h2>欢迎来信。</h2>
-          {site.email.startsWith("[") ? (
-            <p className="email-placeholder">{site.email} <span>请替换为真实邮箱</span></p>
-          ) : (
-            <a className="email-link" href={`mailto:${site.email}`}>{site.email} <span aria-hidden="true">↗</span></a>
-          )}
+          <p className="eyebrow">Have an idea?</p>
+          <h2>Let&apos;s build something useful.</h2>
+          <p className="intro-copy">如果你正在做一个有趣的产品，或者只是想交流技术、AI 和互联网，欢迎联系我。</p>
+          <p className="email-placeholder">Say hello → &nbsp; {site.email} <span>请补充真实邮箱</span></p>
           <div className="footer-bottom">
             <a className="wordmark" href="#top">adog.space</a>
-            <span>© {new Date().getFullYear()} {site.name}</span>
-            <a href="#top">回到顶部 ↑</a>
+            <span>© 2026 adog.space</span>
+            <a href="#top">Built with curiosity. Still evolving. ↑</a>
           </div>
         </footer>
       </main>
