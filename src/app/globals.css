@@ -29,8 +29,11 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
 .nav-contact span { font-size: 15px; }
 .page-shell { width: min(var(--column), calc(100% - 48px)); margin: 0 auto; }
 .domain-strip { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 50px; padding: 8px 0 4px; }
-.domain-strip a { display: inline-flex; align-items: center; gap: 6px; color: #707579; font-size: 11px; line-height: 1.3; white-space: nowrap; transition: color .2s ease, transform .2s ease; }
-.domain-strip a:hover { color: var(--ink); transform: translateY(-1px); }
+.domain-strip-link { position: relative; display: inline-flex; align-items: center; gap: 6px; color: #707579; font-size: 11px; line-height: 1.3; white-space: nowrap; transition: color .2s ease, transform .2s ease; }
+.domain-strip-link:hover { color: var(--ink); transform: translateY(-1px); }
+.domain-warning { padding: 2px 5px; border-radius: 99px; color: #a4473e; background: #fff0ed; font-size: 9px; }
+.domain-expiry-tooltip { position: absolute; z-index: 5; top: calc(100% + 8px); left: 50%; width: max-content; max-width: min(250px, 80vw); padding: 7px 10px; border: 1px solid #e7e7e4; border-radius: 7px; color: #55595c; background: #fff; box-shadow: 0 4px 14px rgba(32, 33, 36, .08); font-size: 11px; line-height: 1.45; white-space: normal; opacity: 0; visibility: hidden; pointer-events: none; transform: translate(-50%, -3px); transition: opacity .15s ease, transform .15s ease, visibility .15s ease; }
+.domain-strip-link:hover .domain-expiry-tooltip, .domain-strip-link:focus-visible .domain-expiry-tooltip { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
 .domain-doodle { width: 24px; height: 24px; flex: 0 0 24px; color: #707579; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
 .domain-doodle-pea { color: #748c73; }
 .domain-doodle-coin { color: #bd9253; }
@@ -134,7 +137,9 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
   .site-header { min-height: 68px; }
   .site-header nav { gap: 15px; font-size: 12px; }
   .domain-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-content: stretch; gap: 8px 12px; min-height: 0; padding: 12px 0 8px; }
-  .domain-strip a { gap: 6px; font-size: 11px; }
+  .domain-strip-link { gap: 6px; font-size: 11px; }
+  .domain-expiry-tooltip { left: 0; transform: translate(0, -3px); }
+  .domain-strip-link:hover .domain-expiry-tooltip, .domain-strip-link:focus-visible .domain-expiry-tooltip { transform: translate(0, 0); }
   .domain-doodle { width: 21px; height: 21px; flex-basis: 21px; }
   .wordmark { font-size: 16px; }
   .nav-contact { min-height: 34px; padding: 0 12px; }
