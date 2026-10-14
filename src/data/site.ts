@@ -2,7 +2,7 @@ export const site = {
   name: "adog.space",
   mark: "adog.space",
   role: "独立开发者",
-  email: "[邮箱待补充]",
+  email: "lnmput@gmail.com",
   description: "独立开发者。写代码，做产品，解决真实的问题。",
 };
 

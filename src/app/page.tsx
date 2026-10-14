@@ -84,7 +84,7 @@ export default function Home() {
           <p className="eyebrow">Have an idea?</p>
           <h2>Let&apos;s build something useful.</h2>
           <p className="intro-copy">如果你正在做一个有趣的产品，或者只是想交流技术、AI 和互联网，欢迎联系我。</p>
-          <p className="email-placeholder">Say hello → &nbsp; {site.email} <span>请补充真实邮箱</span></p>
+          <a className="email-link" href={`mailto:${site.email}`}>Say hello · {site.email} <span aria-hidden="true">↗</span></a>
           <div className="footer-profile">
             <div className="footer-profile-main">
               <span className="footer-profile-mark" aria-hidden="true">a</span>

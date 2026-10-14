@@ -81,8 +81,8 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
 /* Focused portfolio hierarchy refinements */
 .intro { padding-top: 42px; padding-bottom: 34px; }
 .intro .eyebrow { margin-bottom: 10px; }
-.intro h1 { max-width: 680px; margin-bottom: 14px; font-size: clamp(42px, 6.5vw, 60px); line-height: 1.08; letter-spacing: -.055em; }
-.intro-subtitle { margin: 0 0 10px; color: var(--ink); font-size: clamp(20px, 3vw, 25px); line-height: 1.45; font-weight: 600; letter-spacing: -.035em; }
+.intro h1 { max-width: 680px; margin-bottom: 14px; font-size: clamp(36px, 4.3vw, 44px); line-height: 1.15; letter-spacing: -.045em; font-weight: 500; }
+.intro-subtitle { margin: 0 0 10px; color: var(--ink); font-size: clamp(18px, 2.2vw, 21px); line-height: 1.5; font-weight: 500; letter-spacing: -.025em; }
 .intro-copy { max-width: 650px; }
 .intro .text-link { display: inline-block; margin-top: 2px; color: var(--ink); font-size: 13px; text-decoration: underline; text-underline-offset: 4px; }
 .work { padding-top: 10px; }
@@ -138,8 +138,8 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
   .footer-bottom > :nth-child(2) { grid-column: 1; grid-row: 2; justify-self: start; text-align: left; }
   .footer-bottom > :last-child { grid-column: 2; grid-row: 1 / span 2; }
   .intro { padding-top: 38px; padding-bottom: 28px; }
-  .intro h1 { max-width: 100%; font-size: clamp(38px, 10.5vw, 44px); line-height: 1.12; }
-  .intro-subtitle { max-width: 340px; margin-bottom: 8px; font-size: 20px; line-height: 1.5; }
+  .intro h1 { max-width: 100%; font-size: clamp(32px, 8.5vw, 36px); line-height: 1.18; }
+  .intro-subtitle { max-width: 340px; margin-bottom: 8px; font-size: 18px; line-height: 1.5; }
   .intro-copy { font-size: 14px; line-height: 1.75; }
   .work { padding-top: 8px; }
   .project-list { gap: 29px; }
