@@ -85,10 +85,28 @@ export default function Home() {
           <h2>Let&apos;s build something useful.</h2>
           <p className="intro-copy">如果你正在做一个有趣的产品，或者只是想交流技术、AI 和互联网，欢迎联系我。</p>
           <p className="email-placeholder">Say hello → &nbsp; {site.email} <span>请补充真实邮箱</span></p>
+          <div className="footer-profile">
+            <div className="footer-profile-main">
+              <span className="footer-profile-mark" aria-hidden="true">a</span>
+              <div>
+                <p className="footer-profile-name">adog.space</p>
+                <p className="footer-profile-bio">写代码，做产品，解决真实的问题。</p>
+              </div>
+            </div>
+            <nav className="footer-project-links" aria-label="我的产品">
+              {projects.filter((project) => project.link).slice(0, 3).map((project) => (
+                <a key={project.number} href={project.link} target="_blank" rel="noreferrer">{project.title}<span aria-hidden="true">↗</span></a>
+              ))}
+            </nav>
+          </div>
           <div className="footer-bottom">
             <a className="wordmark" href="#top">adog.space</a>
             <span>© 2026 adog.space</span>
-            <a href="#top">Built with curiosity. Still evolving. ↑</a>
+            <nav className="footer-nav" aria-label="页脚导航">
+              <a href="#work">作品</a>
+              <a href="#about">关于</a>
+              <a href="#contact">联系</a>
+            </nav>
           </div>
         </footer>
       </main>
