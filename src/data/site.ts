@@ -15,6 +15,8 @@ export type Project = {
   link?: string;
   linkLabel?: string;
   highlight?: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 export const projects: Project[] = [
@@ -22,31 +24,37 @@ export const projects: Project[] = [
     number: "01",
     title: "AI Chat Backup",
     tagline: "Keep your AI conversations. Own your knowledge.",
-    description: "一款面向全球用户的 Chrome 扩展，帮助用户将 AI 对话保存为 Markdown，或归档到 Notion 和 Obsidian。从最初解决个人需求的小工具，逐渐发展成支持 10 个 AI 平台的产品。",
+    description: "将 AI 对话导出为 Markdown，或归档到 Notion 与 Obsidian，覆盖 10 个 AI 平台。",
     tags: ["Chrome Extension", "10+ AI Platforms", "Markdown / Notion / Obsidian"],
     link: "https://chatgpt-to-notion.linkcanvas.space/",
     linkLabel: "Explore Project",
     highlight: "10K Installs Milestone",
+    image: "https://chatgpt-to-notion.linkcanvas.space/assets/ai-chat-backup-chatgpt-to-notion.png",
+    imageAlt: "AI Chat Backup 将 ChatGPT 对话导出到 Notion 的真实产品截图",
   },
   {
     number: "02",
     title: "BookmarkCat",
     tagline: "A better home for your bookmarks.",
-    description: "一个围绕浏览器侧边栏构建的书签管理工具。通过标签、备注、搜索和整理功能，让收藏过的信息更容易被重新找到。",
+    description: "用侧边栏、标签、备注和搜索，让收藏过的信息更容易找回来。",
     tags: ["Chrome Extension", "Productivity", "Browser Tools"],
+    link: "https://chromewebstore.google.com/detail/bookmarkcat-sidebar-bookm/afglhbhdpnicmeklejjhgmfoagllfkgj",
+    linkLabel: "Chrome Web Store",
   },
   {
     number: "03",
     title: "X / Twitter Backup",
     tagline: "Save what matters before it disappears.",
-    description: "尝试让社交平台上的有价值内容成为可以长期保存、整理和迁移的个人资料。",
+    description: "将社交平台上的有价值内容保存、整理，并成为可迁移的个人资料。",
     tags: ["Browser Extension", "Content Archiving"],
+    link: "https://chromewebstore.google.com/detail/xtwitter-tweet-backup-mar/ghodkmngolbpaomhklnlgjilmcpikabm",
+    linkLabel: "Chrome Web Store",
   },
   {
     number: "04",
     title: "E-commerce & Web Systems",
     tagline: "Where code meets real business.",
-    description: "参与面向日本和韩国市场的跨境电商项目。从网站开发、支付集成、本地化，到订单履约、广告创意和用户转化，以更完整的商业视角理解软件。",
+    description: "参与日本和韩国市场的跨境电商项目，涉及网站开发、支付集成、本地化与订单履约。",
     tags: ["Web Development", "Integrations", "E-commerce"],
   },
 ];

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { capabilities, projects, site } from "@/data/site";
 
 export default function Home() {
@@ -15,10 +16,9 @@ export default function Home() {
       <main id="main" className="page-shell">
         <section className="intro" id="top" aria-labelledby="intro-title">
           <p className="eyebrow">独立开发者 · adog.space</p>
-          <h1 id="intro-title">I build things for the internet.</h1>
-          <p className="intro-copy">写代码，做产品，解决真实的问题。</p>
-          <p className="intro-copy">你好，我是一名独立开发者。过去约 8 年，我一直在与代码、互联网和产品打交道。从 PHP 和 Laravel 开发，到独立构建 Chrome 扩展，再到探索 AI 与真实商业场景的结合。</p>
-          <p className="intro-copy">我喜欢把一个想法变成真正可以使用的东西。</p>
+          <h1 id="intro-title">I build things<br />for the internet.</h1>
+          <p className="intro-subtitle">写代码，做产品，解决真实的问题。</p>
+          <p className="intro-copy">一名拥有约 8 年经验的独立开发者。从 Web 开发到 Chrome 扩展，持续探索 AI、互联网产品和那些值得亲手实现的想法。</p>
           <a className="text-link" href="#work">Explore my work <span aria-hidden="true">→</span></a>
         </section>
 
@@ -29,20 +29,21 @@ export default function Home() {
           </div>
           <div className="project-list">
             {projects.map((project) => (
-              <article className="project" key={project.number}>
-                <div className="project-image" role="img" aria-label={`${project.title} 项目图片待补充`}>
-                  <span className="image-index">{project.number} / 04</span>
-                  <span className="image-placeholder">{project.title}</span>
-                  <span className="image-hint">项目图片待补充</span>
-                </div>
+              <article className={`project${project.number === "01" ? " project-featured" : ""}`} key={project.number}>
+                {project.image && <>
+                  <p className="project-feature-label">Featured Project <span>{project.number} / 04</span></p>
+                  <div className="project-image project-image-real">
+                    <Image src={project.image} alt={project.imageAlt ?? `${project.title} 产品截图`} fill sizes="(max-width: 600px) calc(100vw - 40px), 720px" unoptimized />
+                  </div>
+                </>}
                 <div className="project-heading">
                   <h3>{project.title}</h3>
                   {project.highlight && <span>{project.highlight}</span>}
                 </div>
                 <p className="project-meta">{project.tagline}</p>
                 <p className="project-description">{project.description}</p>
-                <p className="project-meta">{project.tags.join(" · ")}</p>
-                {project.link && <a className="project-link" href={project.link} target="_blank" rel="noreferrer">{project.linkLabel} ↗</a>}
+                <ul className="project-tags" aria-label="技术与项目标签">{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
+                {project.link ? <a className="project-link" href={project.link} target="_blank" rel="noreferrer">{project.linkLabel} ↗</a> : <span className="project-link-missing">项目链接待补充</span>}
               </article>
             ))}
           </div>
