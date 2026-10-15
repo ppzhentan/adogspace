@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { capabilities, projects, site } from "@/data/site";
+import { explorations, projects, site } from "@/data/site";
 import { DomainStrip } from "@/app/domain-strip";
 
 function BrandBadge({ brand }: { brand: "chatgpt" | "notion" | "x" }) {
@@ -40,23 +40,23 @@ export default function Home() {
       <main id="main" className="page-shell">
         <DomainStrip />
         <section className="intro" id="top" aria-labelledby="intro-title">
-          <p className="eyebrow">独立开发者 · adog.space</p>
-          <h1 id="intro-title">I build things<br />for the internet.</h1>
-          <p className="intro-subtitle">写代码，做产品，解决真实的问题。</p>
-          <p className="intro-copy">一名拥有约 8 年经验的独立开发者。从 Web 开发到 Chrome 扩展，持续探索 AI、互联网产品和那些值得亲手实现的想法。</p>
-          <a className="text-link" href="#work">Explore my work <span aria-hidden="true">→</span></a>
+          <p className="eyebrow">INDEPENDENT BUILDER · AI &amp; INTERNET</p>
+          <h1 id="intro-title">Ideas into things.</h1>
+          <p className="intro-subtitle">把想法变成真正存在的东西。</p>
+          <p className="intro-copy">我是 adog，一个独立创造互联网产品的人。<br />我喜欢发现问题、尝试新工具，然后亲手把想法做出来。从浏览器扩展到 AI 驱动的工作流，我持续探索一个人在今天究竟能创造些什么。</p>
+          <a className="text-link" href="#work">Explore what I&apos;ve built <span aria-hidden="true">→</span></a>
         </section>
 
         <section className="work" id="work" aria-labelledby="work-title">
           <div className="section-heading">
-            <h2 id="work-title">Selected Work</h2>
-            <p>一些我真正动手做过的东西。</p>
+            <h2 id="work-title">Things I&apos;ve Built</h2>
+            <p>小而具体，试着解决真实问题。</p>
           </div>
           <div className="project-list">
             {projects.map((project) => (
               <article className={`project${project.number === "01" ? " project-featured" : ""}`} key={project.number}>
                 {project.image && <>
-                  <p className="project-feature-label">{project.imageLabel ?? (project.number === "01" ? "Featured Project" : "Concept artwork")} <span>{project.number} / 04</span></p>
+                  <p className="project-feature-label">{project.imageLabel ?? (project.number === "01" ? "Featured Project" : "Concept artwork")} <span>{project.number} / 03</span></p>
                   <div className="project-image project-image-real">
                     <Image src={project.image} alt={project.imageAlt ?? `${project.title} 产品截图`} fill sizes="(max-width: 600px) calc(100vw - 40px), 720px" unoptimized />
                     {project.number === "01" && <>
@@ -75,7 +75,7 @@ export default function Home() {
                 </div>
                 <p className="project-meta">{project.tagline}</p>
                 <p className="project-description">{project.description}</p>
-                <ul className="project-tags" aria-label="技术与项目标签">{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
+                <ul className="project-tags" aria-label="产品特点">{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
                 {project.link ? <a className="project-link" href={project.link} target="_blank" rel="noreferrer">{project.linkLabel} ↗</a> : <span className="project-link-missing">项目链接待补充</span>}
               </article>
             ))}
@@ -83,40 +83,28 @@ export default function Home() {
         </section>
 
         <section className="about" id="about" aria-labelledby="about-title">
-          <h2 id="about-title">About Me</h2>
+          <h2 id="about-title">I like making things.</h2>
           <div className="about-card">
-            <div className="about-card-heading">
-              <span className="about-monogram" aria-hidden="true">a</span>
-              <div><h3>Developer by experience. Builder by nature.</h3><p>{site.role}</p></div>
-            </div>
-            <p>我的职业经历始于 Web 开发。长期使用 PHP、Laravel、MySQL 和 JavaScript 构建网站、后端服务与业务系统，也熟悉服务器部署、API 集成和浏览器扩展开发。</p>
-            <p>后来，我逐渐发现，比起只完成别人提出的需求，我更喜欢自己发现问题、设计解决方案，并把产品真正发布出去。AI Chat Backup 是这条路上一个重要的作品。</p>
-            <p>开发一个产品并不只是写代码。还需要面对真实用户的反馈、不同平台的兼容性、不断变化的接口，以及上线之后持续出现的新问题。</p>
-            <p><strong>好的产品不一定复杂，但应该解决一个真实存在的问题。</strong></p>
-            <p>现在，我仍然在写代码、做产品，也在探索 AI 能如何改变个人创造软件的方式。</p>
+            <p>我最初是一名软件开发者。</p>
+            <p>多年的开发经历让我学会了如何构建复杂系统，但真正让我着迷的，一直不是某种编程语言，而是创造本身。</p>
+            <p>AI 正在改变一个人构建产品的方式。</p>
+            <p>我开始重新思考，当一个人能够借助 AI 完成更多工作时，什么样的产品值得创造？</p>
+            <p>我没有确定的答案，所以继续做产品、尝试工具、观察用户、记录过程。</p>
+            <p><strong>Less about the tools. More about what we can make.</strong></p>
           </div>
         </section>
 
         <section className="about" aria-labelledby="capabilities-title">
-          <h2 id="capabilities-title">What I Do</h2>
+          <h2 id="capabilities-title">Currently Exploring</h2>
           <div className="about-card">
-            {capabilities.map((item) => <p key={item.title}><strong>{item.title}</strong><br />{item.description}</p>)}
-          </div>
-        </section>
-
-        <section className="about" aria-labelledby="notes-title">
-          <h2 id="notes-title">Notes & Thoughts</h2>
-          <div className="about-card">
-            <p>关于创造、技术和互联网的一些记录。</p>
-            <p>我会在这里分享做产品过程中的发现、遇到的问题，以及那些还没有确定答案的想法。</p>
-            <p>Not everything needs to become a product. Some things are worth exploring just because they&apos;re interesting.</p>
+            {explorations.map((item) => <p key={item.title}><strong>{item.title}</strong><br />{item.description}</p>)}
           </div>
         </section>
 
         <footer className="contact" id="contact">
-          <p className="eyebrow">Have an idea?</p>
-          <h2>Let&apos;s build something useful.</h2>
-          <p className="intro-copy">如果你正在做一个有趣的产品，或者只是想交流技术、AI 和互联网，欢迎联系我。</p>
+          <p className="eyebrow">Contact</p>
+          <h2>Let&apos;s make something interesting.</h2>
+          <p className="intro-copy">有想法、有问题，或者只是想聊聊互联网和 AI？</p>
           <a className="email-link" href={`mailto:${site.email}`}>Say hello · {site.email} <span aria-hidden="true">↗</span></a>
           <div className="footer-profile">
             <div className="footer-profile-main">
@@ -125,7 +113,7 @@ export default function Home() {
               </span>
               <div>
                 <p className="footer-profile-name">adog.space</p>
-                <p className="footer-profile-bio">写代码，做产品，解决真实的问题。</p>
+                <p className="footer-profile-bio">把想法变成真正存在的东西。</p>
               </div>
             </div>
             <nav className="footer-project-links" aria-label="我的产品">

@@ -3,7 +3,7 @@ export const site = {
   mark: "adog.space",
   role: "独立开发者",
   email: "lnmput@gmail.com",
-  description: "独立开发者。写代码，做产品，解决真实的问题。",
+  description: "我是 adog，一个独立创造互联网产品的人。持续探索 AI、互联网产品和那些值得亲手实现的想法。",
 };
 
 export type Project = {
@@ -24,8 +24,8 @@ export const projects: Project[] = [
   {
     number: "01",
     title: "AI Chat Backup",
-    tagline: "Keep your AI conversations. Own your knowledge.",
-    description: "将 AI 对话导出为 Markdown，或归档到 Notion 与 Obsidian，覆盖 10 个 AI 平台。",
+    tagline: "Your AI conversations. Your knowledge.",
+    description: "让 AI 对话成为真正属于自己的知识。",
     tags: ["Chrome Extension", "10+ AI Platforms", "Markdown / Notion / Obsidian"],
     link: "https://chatgpt-to-notion.linkcanvas.space/",
     linkLabel: "Explore Project",
@@ -37,9 +37,9 @@ export const projects: Project[] = [
   {
     number: "02",
     title: "BookmarkCat",
-    tagline: "A better home for your bookmarks.",
-    description: "用侧边栏、标签、备注和搜索，让收藏过的信息更容易找回来。",
-    tags: ["Chrome Extension", "Productivity", "Browser Tools"],
+    tagline: "A calmer way to organize the web.",
+    description: "重新思考如何收藏、整理和找回互联网上的信息。",
+    tags: ["侧边栏整理", "标签与备注", "快速找回"],
     link: "https://chromewebstore.google.com/detail/bookmarkcat-sidebar-bookm/afglhbhdpnicmeklejjhgmfoagllfkgj",
     linkLabel: "Chrome Web Store",
     image: "/images/bookmarkcat-concept.png",
@@ -49,27 +49,20 @@ export const projects: Project[] = [
   {
     number: "03",
     title: "X / Twitter Backup",
-    tagline: "Save what matters before it disappears.",
-    description: "将社交平台上的有价值内容保存、整理，并成为可迁移的个人资料。",
-    tags: ["Browser Extension", "Content Archiving"],
+    tagline: "Keep what matters.",
+    description: "保存那些值得留下的内容。",
+    tags: ["内容归档", "Markdown / Notion"],
     link: "https://chromewebstore.google.com/detail/xtwitter-tweet-backup-mar/ghodkmngolbpaomhklnlgjilmcpikabm",
     linkLabel: "Chrome Web Store",
     image: "/images/x-twitter-backup-concept.png",
     imageAlt: "X/Twitter Backup 功能概念插画：将单条推文、来源链接和媒体整理到 Markdown 或 Notion；并非产品截图",
     imageLabel: "Concept artwork · Not a product screenshot",
   },
-  {
-    number: "04",
-    title: "E-commerce & Web Systems",
-    tagline: "Where code meets real business.",
-    description: "参与日本和韩国市场的跨境电商项目，涉及网站开发、支付集成、本地化与订单履约。",
-    tags: ["Web Development", "Integrations", "E-commerce"],
-  },
 ];
 
-export const capabilities = [
-  { title: "Web Development", description: "使用 PHP、Laravel、JavaScript、MySQL 构建可靠的 Web 应用和后端服务。" },
-  { title: "Browser Extensions", description: "围绕真实的浏览器使用场景，设计、开发并维护 Chrome 扩展。" },
-  { title: "Product Building", description: "从问题发现、产品设计、开发上线，到用户反馈和持续迭代。" },
-  { title: "AI & Automation", description: "探索 AI 辅助编程、内容生成、系统集成与自动化工作流。" },
+export const explorations = [
+  { title: "AI-Native Products", description: "探索围绕 AI 能力设计的新产品。" },
+  { title: "Independent Software", description: "构建小而有用、可以独立发布和持续维护的软件。" },
+  { title: "Creative Experiments", description: "尝试生成式视觉、交互设计和新的数字表达方式。" },
+  { title: "Automation & Workflows", description: "探索 AI 与软件自动化如何改变个人工作方式。" },
 ];

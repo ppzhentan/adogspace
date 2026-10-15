@@ -62,7 +62,7 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
 .project-description { max-width: 620px; margin: 0; color: #55595c; font-size: 14px; line-height: 1.8; }
 .project-missing { margin: 7px 0 0; color: #85898d; font-size: 11px; line-height: 1.7; }
 .placeholder-note { margin: 24px 0 0; padding-top: 14px; color: #8a8d8e; border-top: 1px solid var(--line); font-size: 11px; }
-.about { padding: 28px 0 76px; }
+.about { padding: 20px 0 28px; }
 .about > h2 { margin-bottom: 18px; }
 .about-card { padding: 23px 25px 20px; background: #f7f7f5; border-radius: 12px; }
 .about-card-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
@@ -74,7 +74,7 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
 .about-card dl div { display: grid; grid-template-columns: 42px 1fr; gap: 8px; min-width: 0; }
 .about-card dt { color: #888d90; font-size: 11px; }
 .about-card dd { margin: 0; color: #4f5356; font-size: 12px; overflow-wrap: anywhere; }
-.contact { padding: 24px 0 0; }
+.contact { padding: 16px 0 0; }
 .contact .eyebrow { margin-bottom: 5px; }
 .contact h2 { margin: 0 0 14px; color: var(--ink); font-size: 25px; letter-spacing: -.04em; font-weight: 600; }
 .email-link, .email-placeholder { display: inline-flex; align-items: center; gap: 9px; margin: 0; color: #4c5053; font-size: 14px; }
@@ -160,7 +160,7 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
   .project-heading { margin-top: 13px; }
   .project-heading h3 { font-size: 19px; }
   .project-description { font-size: 13px; }
-  .about { padding-top: 18px; padding-bottom: 60px; }
+  .about { padding-top: 16px; padding-bottom: 24px; }
   .about-card { padding: 18px; }
   .about-card dl { grid-template-columns: 1fr; gap: 10px; }
   .contact h2 { font-size: 24px; }
