@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/data/site";
+import CatLayer from "./cat-layer";
 import "./globals.css";
 
 const baseUrl = "https://adog.space";
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <a className="skip-link" href="#main">跳到正文</a>
         {children}
+        <CatLayer />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>
     </html>

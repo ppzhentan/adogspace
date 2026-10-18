@@ -131,6 +131,27 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
 .footer-project-links a span { margin-left: 5px; font-size: 11px; }
 .footer-nav { display: flex; justify-self: end; gap: 20px; }
 
+.oneko-cat { position: fixed; z-index: 8; display: grid; place-items: center; width: 44px; height: 44px; padding: 2px; border: 0; border-radius: 50%; color: inherit; background: transparent; cursor: pointer; user-select: none; transform: translate(-50%, -50%); filter: drop-shadow(0 2px 2px rgba(32, 33, 36, .12)); -webkit-tap-highlight-color: transparent; }
+.oneko-cat svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.oneko-tail { transform-origin: 25px 19px; }
+.oneko-cat-walking .oneko-tail { animation: oneko-tail-swish .34s steps(2, end) infinite alternate; }
+.oneko-cat-walking svg { animation: oneko-bob .34s steps(2, end) infinite alternate; }
+.oneko-cat-grooming svg { animation: oneko-groom .42s ease-in-out infinite alternate; transform-origin: 50% 75%; }
+.oneko-cat-curious svg { animation: oneko-curious .32s ease-out both; }
+.oneko-cat-sleeping svg { animation: oneko-sleep .9s ease-in-out infinite alternate; transform-origin: 50% 70%; }
+.oneko-cat-resting { opacity: .72; }
+.oneko-cat:focus-visible { outline: 2px solid #8a6f57; outline-offset: 2px; }
+.oneko-thought, .oneko-zzz { position: absolute; z-index: 1; left: 50%; bottom: calc(100% - 2px); width: max-content; max-width: min(170px, 65vw); padding: 4px 8px; border: 1px solid #eee8df; border-radius: 9px 9px 9px 3px; color: #5a5047; background: #fffdf9; box-shadow: 0 2px 8px rgba(47, 38, 28, .08); font: 11px/1.45 var(--font); white-space: nowrap; pointer-events: none; animation: oneko-thought-in .18s ease-out both; }
+.oneko-zzz { left: 58%; bottom: 75%; color: #8a7b6c; font-size: 10px; letter-spacing: .1em; border: 0; background: transparent; box-shadow: none; animation: oneko-zzz-float 1.1s ease-in-out infinite alternate; }
+@media (max-width: 600px) { .oneko-cat { width: 40px; height: 40px; } }
+@keyframes oneko-tail-swish { to { transform: rotate(-18deg); } }
+@keyframes oneko-bob { to { translate: 0 -2px; } }
+@keyframes oneko-groom { to { rotate: -5deg; translate: 0 1px; } }
+@keyframes oneko-curious { 50% { translate: 0 -4px; rotate: -5deg; } }
+@keyframes oneko-sleep { to { translate: 0 1px; scale: 1 .97; } }
+@keyframes oneko-thought-in { from { opacity: 0; translate: -50% 3px; } to { opacity: 1; translate: -50% 0; } }
+@keyframes oneko-zzz-float { to { opacity: .55; translate: 3px -5px; } }
+
 @media (max-width: 600px) {
   html { scroll-padding-top: 68px; }
   .site-header, .page-shell, .not-found { width: calc(100% - 40px); }
@@ -184,4 +205,6 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+  .oneko-cat { filter: none; }
+  .oneko-cat-walking .oneko-tail, .oneko-cat-walking svg, .oneko-cat-grooming svg, .oneko-cat-curious svg, .oneko-cat-sleeping svg, .oneko-thought, .oneko-zzz { animation: none !important; }
 }
