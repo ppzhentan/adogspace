@@ -32,6 +32,7 @@ export default function Home() {
         <a className="wordmark" href="#top" aria-label="adog.space 首页">adog.space</a>
         <nav aria-label="主导航">
           <a href="#work">作品</a>
+          <a href="/agent-engineering-course">教程</a>
           <a href="#about">关于</a>
           <a className="nav-contact" href="#contact">联系我 <span aria-hidden="true">↗</span></a>
         </nav>
@@ -56,7 +57,7 @@ export default function Home() {
             {projects.map((project) => (
               <article className={`project${project.number === "01" ? " project-featured" : ""}`} key={project.number}>
                 {project.image && <>
-                  <p className="project-feature-label">{project.imageLabel ?? (project.number === "01" ? "Featured Project" : "Concept artwork")} <span>{project.number} / 03</span></p>
+                  <p className="project-feature-label">{project.imageLabel ?? (project.number === "01" ? "Featured Project" : "Concept artwork")} <span>{project.number} / {String(projects.length).padStart(2, "0")}</span></p>
                   <div className="project-image project-image-real">
                     <Image src={project.image} alt={project.imageAlt ?? `${project.title} 产品截图`} fill sizes="(max-width: 600px) calc(100vw - 40px), 720px" unoptimized />
                     {project.number === "01" && <>

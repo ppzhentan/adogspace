@@ -58,6 +58,16 @@ export const projects: Project[] = [
     imageAlt: "X/Twitter Backup 功能概念插画：将单条推文、来源链接和媒体整理到 Markdown 或 Notion；并非产品截图",
     imageLabel: "Concept artwork · Not a product screenshot",
   },
+  {
+    number: "04",
+    title: "从零构建 AI Agent",
+    tagline: "A practical course on building reliable agents.",
+    description: "一套基于 Python、Ollama 与本地 Qwen3 的中文实战教程，覆盖工具调用、Agent Loop、RAG、多智能体与 SaaS 工程。",
+    tags: ["25 节课程", "Python", "本地大模型"],
+    link: "/agent-engineering-course",
+    linkLabel: "阅读教程",
+    highlight: "25 节课程 · 配套代码下载",
+  },
 ];
 
 export const explorations = [
