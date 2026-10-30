@@ -41,6 +41,7 @@ a:focus-visible { outline: 2px solid #4c5154; outline-offset: 4px; }
 .domain-doodle-cloud-face { color: #9293aa; }
 .domain-doodle-beer { color: #b08a4e; }
 .domain-doodle-comb { color: #a98187; }
+.domain-doodle-clock { color: #748c8a; }
 .intro { padding: 67px 0 72px; }
 .eyebrow { margin: 0 0 15px; color: var(--muted); font-size: 12px; font-weight: 500; letter-spacing: .025em; }
 .intro h1 { max-width: 680px; margin: 0 0 22px; color: var(--ink); font-size: clamp(25px, 4vw, 30px); line-height: 1.48; letter-spacing: -.035em; font-weight: 600; }
