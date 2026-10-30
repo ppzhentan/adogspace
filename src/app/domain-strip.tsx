@@ -10,6 +10,7 @@ const domains = [
   { name: "9du.beer", doodle: "beer" },
   { name: "bye.hair", doodle: "comb" },
   { name: "7x24.run", doodle: "clock" },
+  { name: "adog.space", doodle: "home" },
 ];
 
 type Expiration = { domain: string; expiresAt: string | null; source: string | null };
@@ -17,6 +18,9 @@ type Expiration = { domain: string; expiresAt: string | null; source: string | n
 function DomainDoodle({ kind }: { kind: string }) {
   return (
     <svg className={`domain-doodle domain-doodle-${kind}`} viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      {kind === "home" && <>
+        <path d="m4 15 12-10 12 10M7 13v14h18V13M13 27v-9h6v9" />
+      </>}
       {kind === "clock" && <>
         <circle cx="16" cy="16" r="11" />
         <path d="M16 9v7l5 3m-14-14 3-2m15 2-3-2" />
