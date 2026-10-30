@@ -6,7 +6,7 @@ const domains = [
   { name: "9du.beer", rdapUrl: "https://rdap.nic.beer/domain/9du.beer" },
   { name: "bye.hair", rdapUrl: "https://rdap.centralnic.com/hair/domain/bye.hair" },
   { name: "7x24.run", rdapUrl: "https://rdap.identitydigital.services/rdap/domain/7x24.run" },
-  { name: "adog.space", rdapUrl: "https://rdap.centralnic.com/space/domain/adog.space" },
+  { name: "adog.space", rdapUrl: "https://rdap.radix.host/rdap/domain/adog.space" },
 ];
 
 export const dynamic = "force-dynamic";
